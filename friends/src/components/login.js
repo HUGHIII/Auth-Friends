@@ -6,6 +6,8 @@ import {Redirect} from 'react-router-dom';
 
 
 const Login = props => {
+    console.log(props);
+
     const [creds,setCreds] =useState({username:'',password:''});
 
     const handleChange = e => {
@@ -18,7 +20,7 @@ const Login = props => {
         .then(res=> {
             console.log(res)
             return window.localStorage.setItem('TOKEN', res.data.payload),
-            //  <Redirect to='/FriendsList'/>
+             props.history.push('/FriendsList');
         })
         .catch(err=>console.log(err,'errrrooooorrrrrr'))
     }

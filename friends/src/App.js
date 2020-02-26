@@ -3,6 +3,7 @@ import {Route, withRouter, Switch} from 'react-router-dom';
 import NavBar from './components/navBar';
 import Login from './components/login';
 import FriendsList from './components/FriendsList';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -20,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App) ;
